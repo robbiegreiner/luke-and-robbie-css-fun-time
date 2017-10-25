@@ -1,0 +1,74 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px solid black;
+}
+
+body {
+  background-color: #6F9295;
+}
+
+main {
+  display: grid;
+  margin-top: 25px;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 400px auto;
+  grid-template-areas:
+    "top top"
+    "left right"
+}
+
+.dashboard {
+  grid-area: top;
+  display: flex;
+  background-color: #AFD2D1;
+}
+
+.dashboard article {
+  background-color: #EDF3D6;
+}
+
+img {
+  width: 95%;
+  height: 80%;
+}
+
+.workout, .days-logged {
+  width: 20%;
+  min-width: 250px;
+}
+
+.workout {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.days-logged {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.number {
+  font-size: 60px;
+}
+
+.recent {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.goals {
+  grid-area: left;
+}
+
+.calendar {
+  grid-area: right;
+}
