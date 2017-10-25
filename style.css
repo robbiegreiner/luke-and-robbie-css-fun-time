@@ -1,11 +1,18 @@
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   background-color: #6F9295;
+}
+
+.title {
+  color: #FE5F55;
+  text-align: center;
+  text-shadow: rgba(26, 26, 26, 1) 3px 3px;
 }
 
 main {
@@ -18,19 +25,39 @@ main {
     "left right"
 }
 
+button {
+  background-color: #FE5F55;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  margin: 20px;
+}
+
+h1, h2, h3, p {
+  color: #6F9295;
+  margin: 0;
+}
+
 .dashboard {
   grid-area: top;
   display: flex;
   background-color: #AFD2D1;
 }
 
-.dashboard article {
+.dashboard article, .calendar .cal, .goals .user-input  {
   background-color: #EDF3D6;
+  margin: 20px;
+}
+
+.goals, .calendar {
+  background-color: #AFD2D1;
+  margin: 20px 10px;
 }
 
 img {
   width: 95%;
   height: 80%;
+  margin: 10px;
 }
 
 .workout, .days-logged {
@@ -38,11 +65,16 @@ img {
   min-width: 250px;
 }
 
-.workout {
+.workout, .user-input {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+input {
+  margin: 22px;
+  height: 40px;
 }
 
 .days-logged {
@@ -55,6 +87,7 @@ img {
 
 .number {
   font-size: 60px;
+  color: #FE5F55;
 }
 
 .recent {
@@ -69,6 +102,67 @@ img {
   grid-area: left;
 }
 
+.user-input h2 {
+  margin: 15px;
+}
+
+.user-input p {
+  margin: 5px;
+  font-size: 1.35em;
+}
+
 .calendar {
   grid-area: right;
+}
+
+.cal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+table {
+  background-color: #FE5F55;
+  border: none;
+  margin: 10px 0;
+}
+
+td {
+  background-color: #6F9295;
+  border: none;
+  box-shadow: 5px 2px 2px black;
+}
+
+@media (max-width: 950px) {
+  main {
+    display: grid;
+    margin-top: 25px;
+    grid-template-columns: auto;
+    grid-template-rows: 33.3333%;
+    grid-template-areas:
+      "top"
+      "left"
+      "right"
+  }
+
+  .dashboard {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #AFD2D1;
+  }
+
+  .workout, .recent, .days-logged {
+    width: 90%;
+  }
+
+  .dashboard article, .calendar .cal, .goals .user-input  {
+    margin: 5px;
+  }
+
+  table {
+    margin: 5px 0;
+  }
 }
